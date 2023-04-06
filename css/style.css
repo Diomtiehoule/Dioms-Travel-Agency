@@ -1,0 +1,617 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo
+{
+    font-size: 2em;
+    color: white;
+    user-select: none;
+}
+
+.navigation a
+{
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.navigation a::after
+{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s ;
+}
+.navigation a:hover::after
+{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnPopup
+{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+
+}
+
+.navigation .btnPopup:hover
+{
+    background: #fff;
+    color: #162938;
+}
+
+/* formulaire registrer et login */
+
+.wrapper
+{
+    position: absolute;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+   box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   transform: scale(0);
+   transition: transform .5s ease, height .2s ease;
+}
+.wrapper.active-popup
+{
+    transform: scale(1);
+}
+.wrapper.active
+{
+    height: 520px;
+}
+.wrapper .form-box
+{
+    width: 100%;
+    padding: 40px;
+}
+.wrapper .form-box.login
+{
+    transition: transform .18s  ease;
+    transform: translateX(0);
+}
+.input-box .icon
+{
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    font-size: 1.2em;
+}
+.wrapper.active .form-box.login
+{
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper .form-box.register
+{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+.wrapper.active .form-box.register
+{
+    transition: transform .18s  ease;
+    transform: translateX(0);
+}
+.wrapper .icon-close
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background-color: #162938;
+    display: flex;
+    font-size:2em;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.form-box h2
+{
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+.input-box
+{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+.input-box label
+{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label
+{
+    top: -5px;
+}
+.input-box input
+{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+}
+
+.remember-forgot
+{
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input
+{
+    accent-color: #162938;
+    margin-right: 3px;
+}
+.remember-forgot a
+{
+    color: #162938;
+    text-decoration: none;
+}
+.remember-forgot a:hover
+{
+    text-decoration: underline;
+}
+
+
+.btn
+{
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;  
+}
+
+
+.login-register
+{
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.login-register p a
+{
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-register p a:hover
+{
+    text-decoration: underline;
+}
+
+
+
+#main-idea
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("../images/ile.jpg")  no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#main-idea .home
+{
+
+    color: white;
+    width: 70%;
+    height: 400px;
+    display: inline;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    /* margin-top: 150px; */
+    border-radius: 20px ;
+}
+.md
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+.home h2
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    padding-top: 30px;
+}
+.destination
+{
+    margin-left: 240px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    height: 60px;
+    background-color: white;
+    margin-top: 20px;
+}
+.destination p
+{
+    font-size: 1.5rem;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+.personnalisation
+{
+    margin-left: 240px;
+    cursor: pointer;
+    margin-top: 30px;
+    width: 50%;
+    height: 60px;
+    background-color: rgb(67, 152, 231);
+}
+.personnalisation p
+{
+    font-size: 1.5rem;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+.type
+{
+    margin-top: 100px;
+}
+.type ul 
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, .5);
+    height: 40px;
+    font-size: 1.3rem;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.type ul li
+{
+    cursor: pointer;
+}
+
+
+/* OFFRES */
+#offres
+{
+    width: 100%;
+    position: relative;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 150px;
+}
+#offres img
+{
+    width: 600px;
+    height: 400px;
+}
+.opt1
+{
+    height: 300px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.opt1 p
+{
+    text-align: center;
+    padding-top: 15px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+.opt2 p
+{
+    text-align: center;
+    padding-top: 15px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+.p
+{
+    position: absolute;
+    color: white;
+    font-weight: bold;
+}
+.opt2
+{
+    height: 300px;
+    background-color: blue;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.opt1 .plus1
+{
+    width: 200px;
+    height: 60px;
+    background-color: rgb(67, 152, 231);
+    border-radius: 5px;
+    position: absolute;
+    top: 250px;
+    cursor: pointer
+    ;
+}
+.plus
+{
+    width: 200px;
+    height: 60px;
+    background-color: rgb(67, 152, 231);
+    border-radius: 5px;
+    position: absolute;
+    bottom: -5px;
+    cursor: pointer
+    ;
+}
+.plus:hover
+{
+    background-color: white;
+    transition: 0.4s;
+}
+.plus1:hover
+{
+    background-color: white;
+    transition: 0.4s;
+}
+.container
+{
+    clear: both;
+}
+
+
+
+/* Offres des  endroit de voyage favorable */
+.select
+{
+    margin-top: 150px;
+    flex-wrap: wrap;
+    gap: 100px;
+    width: 100%;
+    padding-bottom: 20px;
+    background-color: rgba(67, 152, 231, 0.301);    
+}
+.chooses
+{
+    display: flex;
+    gap: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.select h1
+{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+} 
+.select img
+{
+    width: 400px;
+    height: 300px;
+}
+.choose
+{
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    color: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.choose:hover
+{
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    color: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.block
+{
+    width: 80px;
+    height: 30px;
+    background-color: crimson;
+    text-align: center ;
+    padding-top: 5px;
+    margin-left: 160px;
+    margin-top: 5px;
+}
+
+
+/* Espace pour contactez nos specialiste dans le domaine des voyage */
+.ref
+{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.ref p
+{
+    position: absolute;
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    top: 100px;
+}
+.ref .joindre
+{
+    position: absolute;
+    bottom: 50px;
+    width: 250px;
+    height: 60px;
+    background: rgb(67, 152, 231);
+    text-align: center;
+    padding-top: 12px;
+    border-radius: 03px;
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.joindre:hover
+{
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(67, 152, 231);
+    color: rgb(67, 152, 231);
+    font-weight: bold;
+}
+.ref img
+{
+    width: 1000px;
+    height: 500px;
+}
+
+
+
+
+
+
+/* FOOTER */
+footer
+{
+    background-color: rgb(67, 152, 231);
+    width: 100%;
+    margin-top: 50px;
+}
+footer ul li
+{
+    list-style: none;
+    text-decoration: none;
+    padding-bottom: 8px;
+}
+footer h1
+{
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+footer .all
+{
+    justify-content: center;
+    /* align-items: center; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.border-end
+{
+    border: 1px solid black;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+.copyright
+{
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+}
