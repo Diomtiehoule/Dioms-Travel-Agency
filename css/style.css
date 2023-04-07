@@ -639,6 +639,55 @@ footer .all
     font-size: 1.2rem;
 }
 
-@media screen and ( min-width : 325px) {
-    
+@media screen and ( max-width : 320px) {
+
+header{
+
+    }
+    .logo
+    {
+        display: none;
+    }
+    .navigation a
+    {
+        display: inline;
+        float: right;
+    }
+.destination
+{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    margin-top: 20px;
+    font-size: 1.rem;
+}
+/* .destination p
+{
+    font-size: 1.5rem;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 10px;
+} */
+.personnalisation
+{
+    cursor: pointer;
+    margin-top: 30px;
+    background-color: rgb(67, 152, 231);
+}
+/* .personnalisation p
+{
+    font-size: 1.5rem;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 15px;
+} */
 }
