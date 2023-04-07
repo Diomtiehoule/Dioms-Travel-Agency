@@ -12,13 +12,36 @@ header
     top: 0;
     left: 0;
     width: 100%;
+    background-color: rgb(67, 152, 231);
     padding: 20px 100px;
     display: flex;
     justify-content:space-between;
     align-items: center;
     z-index: 99;
 }
-
+/* header:hover
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(67, 152, 231);
+    transition: .25s;
+    padding: 20px 100px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    z-index: 99;
+} */
+header i
+{
+    font-size: 2rem;
+    /* visibility: hidden; */
+}
+.menu
+{
+    margin: 10px 25px;
+}
 .logo
 {
     font-size: 2em;
@@ -68,9 +91,9 @@ header
     font-weight: 500;
     margin-left: 40px;
     transition: .5s;
+    margin-right: 10px;
 
 }
-
 .navigation .btnPopup:hover
 {
     background: #fff;
@@ -614,4 +637,8 @@ footer .all
     text-align: center;
     padding-bottom: 10px;
     font-size: 1.2rem;
+}
+
+@media screen and ( min-width : 325px) {
+    
 }
